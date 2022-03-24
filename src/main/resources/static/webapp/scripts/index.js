@@ -1,4 +1,4 @@
-header("Access-Control-Allow-Origin: *");
+
 
 function $(x){
     return document.getElementById(x)
@@ -27,7 +27,8 @@ async function login() {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*'
     },
     body: JSON.stringify(user)
   })
@@ -81,7 +82,8 @@ async function register() {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*'
     },
     body: JSON.stringify(user)
   })

@@ -1,4 +1,4 @@
-header("Access-Control-Allow-Origin: *");
+
 
 //Management Questions
 // Charts
@@ -48,6 +48,7 @@ $(document).ready(function () {
 let factsArray = [];
 function getAllFacts(){
     let xhr = new XMLHttpRequest();
+    xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
         xhr.onreadystatechange = function () {
             console.log("-----------Begin-----------------")
             if (xhr.readyState == 4 && xhr.status == 200) {
@@ -169,6 +170,7 @@ function getTxnChartData(){
 
     
     let xhr = new XMLHttpRequest();
+    xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
             let response = JSON.parse(xhr.responseText);
@@ -228,6 +230,7 @@ function getTypeChartData(){
         chartStatus.destroy();
     }
     let xhr = new XMLHttpRequest();
+    xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
             let response = JSON.parse(xhr.responseText);

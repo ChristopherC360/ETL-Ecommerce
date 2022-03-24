@@ -1,4 +1,4 @@
-header("Access-Control-Allow-Origin: *");
+
 
 //Research Questions
 // Charts
@@ -16,6 +16,7 @@ $(document).ready(function () {
 });
 function overallSpent(){
    let xhr = new XMLHttpRequest();
+   xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
    xhr.onreadystatechange = function () {
        if (xhr.readyState == 4 && xhr.status == 200){
             let response = JSON.parse(xhr.responseText);
@@ -55,6 +56,7 @@ function overallSpent(){
 
 function getAllResearch(){
     let xhr = new XMLHttpRequest();
+    xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
         xhr.onreadystatechange = function () {
             if (xhr.readyState == 4 && xhr.status == 200) {
                 let response = JSON.parse(xhr.responseText);
@@ -156,6 +158,7 @@ function getDayBarChart(){
     //     chartStatus.destroy();
     // }
     let xhr = new XMLHttpRequest();
+    xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
             let response = JSON.parse(xhr.responseText);
